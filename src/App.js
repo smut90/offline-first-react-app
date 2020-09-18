@@ -27,17 +27,19 @@ function App() {
     }
 
     function toggleComplete(id) {
-        setTodos(
-            todos.map(todo => {
-                if (todo.id === id) {
-                    return {
-                        ...todo,
-                        completed: !todo.completed
-                    };
-                }
-                return todo;
-            })
-        );
+        if (todos) {
+            setTodos(
+                todos.map(todo => {
+                    if (todo.id === id) {
+                        return {
+                            ...todo,
+                            completed: !todo.completed
+                        };
+                    }
+                    return todo;
+                })
+            );
+        }
     }
 
     function removeTodo(id) {
